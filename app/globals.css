@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tasarım sistemi: renkler ve yazı tipleri tek yerde tanımlı, bileşenler
+   bunları Tailwind sınıfı olarak kullanıyor (bg-kagit, text-vurgu ...). */
+@theme {
+  --color-kagit: #f6f4ef;
+  --color-kart: #ffffff;
+  --color-cizgi: #e2ded4;
+  --color-murekkep: #1a1d23;
+  --color-murekkep-az: #4a4f58;
+  --color-soluk: #5a5f68;
+  --color-vurgu: #3434c8;
+  --color-turuncu: #b4521c;
+  --color-turuncu-acik: #f2a06b;
+  --color-bant: #ede9e0;
+
+  --font-baslik: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-govde: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-kagit);
+  color: var(--color-murekkep);
+  font-family: var(--font-govde);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
