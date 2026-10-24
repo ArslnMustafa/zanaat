@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Derleme çıktısının yeri. Sunucuda güncelleme yaparken yeni sürüm ayrı bir
+  // klasöre derlenip sonra yerine konuyor; böylece çalışan site, yarım kalmış
+  // bir derlemeyi okumuyor.
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

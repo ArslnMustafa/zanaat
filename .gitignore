@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sunucuda derleme sirasinda olusan gecici klasorler
+.next-yeni
+.next-eski
